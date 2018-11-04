@@ -13,5 +13,17 @@ namespace CaliburnAutofacMahApp
     /// </summary>
     public partial class App : Application
     {
+        private Bootstrapper bootstrapper;
+
+        public App()
+        {
+            bootstrapper = new Bootstrapper();
+        }
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            bootstrapper.Initialize();
+            base.OnStartup(e);
+        }
     }
 }
